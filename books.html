@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>BookSlide — Romans Français (Extraits)</title>
+  <style>
+    /* Reset léger */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html,body { height: 100%; font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; color:#222; background:#faf9f7; }
+
+    /* Header fixe */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 999;
+      background: #ffffffcc; /* léger semi-transparent */
+      backdrop-filter: blur(4px);
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .logo { font-weight: 700; font-size: 18px; color:#1a1a1a; }
+    nav { margin-left: auto; display:flex; gap: 14px; align-items:center; }
+    nav a { text-decoration:none; color:#444; padding:6px 10px; border-radius:8px; font-size:14px; }
+    nav a:hover { background:#f0f0f0; }
+
+    /* spacer to avoid content under header */
+    main { padding-top: 74px; padding-left: 20px; padding-right: 20px; padding-bottom:40px; }
+
+    h1.section-title { font-size:20px; margin: 10px 0 14px; color:#0b3b2e; }
+    p.lead { color:#555; margin-bottom: 18px; }
+
+    /* Slider container */
+    .slider-wrap {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      align-items: center;
+    }
+    .slider {
+      display: flex;
+      gap: 14px;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      padding-bottom: 6px;
+      -webkit-overflow-scrolling: touch;
+    }
+    .slider::-webkit-scrollbar { height: 10px; }
+    .slider::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.15); border-radius: 8px; }
+
+    /* Card */
+    .card {
+      min-width: 220px;
+      max-width: 260px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+    .cover {
+      height: 140px;
+      border-radius: 8px;
+      background-size: cover;
+      background-position: center;
+      box-shadow: inset 0 -20px 30px rgba(0,0,0,0.02);
+    }
+    .meta { font-size: 13px; color:#666; }
+    .title { font-weight:700; font-size:15px; color:#0b2f26; line-height:1.15; }
+    .excerpt { font-size:13px; color:#444; min-height:48px; }
+
+    .cta-row { margin-top: auto; display:flex; gap:8px; align-items:center; }
+    .btn {
+      display:inline-block;
+      padding:8px 10px;
+      border-radius:8px;
+      text-decoration:none;
+      font-weight:600;
+      font-size:13px;
+      background:#0b7a63;
+      color:#fff;
+    }
+    .btn.secondary {
+      background:transparent;
+      border:1px solid #ddd;
+      color:#333;
+      font-weight:600;
+    }
+
+    /* Arrows */
+    .arrow {
+      position: absolute;
+      top: 40%;
+      transform: translateY(-50%);
+      width: 40px; height: 40px;
+      border-radius: 8px;
+      display: grid; place-items: center;
+      background: rgba(255,255,255,0.9);
+      box-shadow: 0 6px 18px rgba(10,10,10,0.06);
+      cursor: pointer;
+      user-select: none;
+    }
+    .arrow.left { left: -6px; }
+    .arrow.right { right: -6px; }
+
+    /* Responsive */
+    @media (min-width: 720px) {
+      .card { min-width: 260px; }
+    }
+    @media (min-width: 1000px) {
+      main { max-width: 1100px; margin: 0 auto; }
+    }
+
+    /* Footer small */
+    footer { text-align:center; color:#777; font-size:13px; margin-top:28px; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">BookSlide</div>
+    <nav aria-label="Main navigation">
+      <a href="#">Accueil</a>
+      <a href="#populaires">Populaires</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section aria-labelledby="fr-title">
+      <h1 id="fr-title" class="section-title">Romans français — Sélection</h1>
+      <p class="lead">Mini-summaries prêts pour les cards. Clique "Lire maintenant" باش تمشي للرابط الخارجي.</p>
+
+      <div class="slider-wrap" style="margin-top:8px;">
+        <div class="arrow left" id="arrow-left" title="Prev" aria-hidden="false">&#9664;</div>
+
+        <div class="slider" id="french-slider" role="list">
+          <!-- Card 1 -->
+          <article class="card" role="listitem">
+            <div class="cover" style="background-image: url('https://via.placeholder.com/300x200?text=Les+Mis%C3%A9rables');" aria-hidden="true"></div>
+            <div class="title">Les Misérables</div>
+            <div class="meta">Victor Hugo</div>
+            <div class="excerpt">جان فالجان يحاول يصلّح حياتو بعد السجن، ويواجه الظلم والفقر مع قلب كبير.</div>
+            <div class="cta-row">
+              <a class="btn" href="#" target="_blank" rel="noopener">Lire maintenant</a>
+              <a class="btn secondary" href="#" target="_blank" rel="noopener">Détails</a>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="card" role="listitem">
+            <div class="cover" style="background-image: url('https://via.placeholder.com/300x200?text=Le+Comte+de+Monte-Cristo');"></div>
+            <div class="title">Le Comte de Monte-Cristo</div>
+            <div class="meta">Alexandre Dumas</div>
+            <div class="excerpt">إدمون دانتيس يتعرض للخيانة ثم يخطط لانتصاف مصيري بعد الهروب والغنى.</div>
+            <div class="cta-row">
+              <a class="btn" href="#" target="_blank" rel="noopener">Lire maintenant</a>
+              <a class="btn secondary" href="#" target="_blank" rel="noopener">Détails</a>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="card" role="listitem">
+            <div class="cover" style="background-image: url('https://via.placeholder.com/300x200?text=Bel-Ami');"></div>
+            <div class="title">Bel-Ami</div>
+            <div class="meta">Guy de Maupassant</div>
+            <div class="excerpt">جورج دوروا يطلع للمكانة الاجتماعية بذكائه وجاذبيته عبر علاقاته العاطفية.</div>
+            <div class="cta-row">
+              <a class="btn" href="#" target="_blank" rel="noopener">Lire maintenant</a>
+              <a class="btn secondary" href="#" target="_blank" rel="noopener">Détails</a>
+            </div>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="card" role="listitem">
+            <div class="cover" style="background-image: url('https://via.placeholder.com/300x200?text=Madame+Bovary');"></div>
+            <div class="title">Madame Bovary</div>
+            <div class="meta">Gustave Flaubert</div>
+            <div class="excerpt">إيما تبحث عن الحب والمغامرة خارج زواجها، واختياراتها تؤدي لنتائج مأساوية.</div>
+            <div class="cta-row">
+              <a class="btn" href="#" target="_blank" rel="noopener">Lire maintenant</a>
+              <a class="btn secondary" href="#" target="_blank" rel="noopener">Détails</a>
+            </div>
+          </article>
+
+          <!-- Card 5 -->
+          <article class="card" role="listitem">
+            <div class="cover" style="background-image: url('https://via.placeholder.com/300x200?text=Germinal');"></div>
+            <div class="title">Germinal</div>
+            <div class="meta">Émile Zola</div>
+            <div class="excerpt">قصة عمال المناجم والمقاومة ضد الفقر والاستغلال، رواية اجتماعية قوية.</div>
+            <div class="cta-row">
+              <a class="btn" href="#" target="_blank" rel="noopener">Lire maintenant</a>
+              <a class="btn secondary" href="#" target="_blank" rel="noopener">Détails</a>
+            </div>
+          </article>
+
+          <!-- Card 6 -->
+          <article class="card" role="listitem">
+            <div class="cover" style="background-image: url('https://via.placeholder.com/300x200?text=La+Princesse+de+Cl%C3%A8ves');"></div>
+            <div class="title">La Princesse de Clèves</div>
+            <div class="meta">Madame de La Fayette</div>
+            <div class="excerpt">أميرة شريفة وسط البلاط الملكي تواجه صدام بين الواجب وقلبها المحبّ.</div>
+            <div class="cta-row">
+              <a class="btn" href="#" target="_blank" rel="noopener">Lire maintenant</a>
+              <a class="btn secondary" href="#" target="_blank" rel="noopener">Détails</a>
+            </div>
+          </article>
+
+          <!-- Card 7 -->
+          <article class="card" role="listitem">
+            <div class="cover" style="background-image: url('https://via.placeholder.com/300x200?text=Manon+Lescaut');"></div>
+            <div class="title">Manon Lescaut</div>
+            <div class="meta">Abbé Prévost</div>
+            <div class="excerpt">حبٌ قوي بين مانون وديسغريو يجلب لهم متاعب وقرارات مصيرية.</div>
+            <div class="cta-row">
+              <a class="btn" href="#" target="_blank" rel="noopener">Lire maintenant</a>
+              <a class="btn secondary" href="#" target="_blank" rel="noopener">Détails</a>
+            </div>
+          </article>
+
+          <!-- Card 8 -->
+          <article class="card" role="listitem">
+            <div class="cover" style="background-image: url('https://via.placeholder.com/300x200?text=Contes+de+Perrault');"></div>
+            <div class="title">Contes de Perrault</div>
+            <div class="meta">Charles Perrault</div>
+            <div class="excerpt">سلسلة حكايات سحرية مشهورة: سندريلا، ليلى الصغيرة... دروس بسيطة وقصص ممتعة.</div>
+            <div class="cta-row">
+              <a class="btn" href="#" target="_blank" rel="noopener">Lire maintenant</a>
+              <a class="btn secondary" href="#" target="_blank" rel="noopener">Détails</a>
+            </div>
+          </article>
+        </div>
+
+        <div class="arrow right" id="arrow-right" title="Next" aria-hidden="false">&#9654;</div>
+      </div>
+    </section>
+
+    <footer id="populaires" style="margin-top:26px;">
+      © BookSlide — Extraits gratuits | Remplace les liens par les URLs réelles de lecture.
+    </footer>
+  </main>
+
+  <script>
+    // Simple slider controls
+    (function(){
+      const slider = document.getElementById('french-slider');
+      const left = document.getElementById('arrow-left');
+      const right = document.getElementById('arrow-right');
+
+      const scrollAmount = 280; // pixels to scroll per click (ajuste selon la taille des cards)
+
+      left.addEventListener('click', () => {
+        slider.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+      });
+      right.addEventListener('click', () => {
+        slider.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+      });
+
+      // Optional: hide arrows on small screens if not needed
+      function updateArrows() {
+        const canScrollLeft = slider.scrollLeft > 5;
+        const canScrollRight = slider.scrollLeft + slider.clientWidth < slider.scrollWidth - 5;
+        left.style.display = canScrollLeft ? 'grid' : 'none';
+        right.style.display = canScrollRight ? 'grid' : 'none';
+      }
+      slider.addEventListener('scroll', updateArrows);
+      window.addEventListener('resize', updateArrows);
+      // init
+      updateArrows();
+    })();
+  </script>
+</body>
+</html>

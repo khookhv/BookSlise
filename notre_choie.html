@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .concept{
+            height: 250px;
+        }
+        .book{
+            height: 400px;
+            width: 30%;
+            margin-left: 20px;
+            margin-top: 0px;
+            margin-bottom: 30px;
+            position: static;
+        }
+        .books{
+            height: auto;
+            border: none;
+        }
+        .info{
+            width: 60%;
+            display: inline;
+        }
+        #book1, #book2, #book3, #book4{
+            display: flex;
+            margin-top: 20px;
+        }
+        .nom_romans{
+            padding-top: 30px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-weight: bold;
+        }
+        .static{
+            position: static;
+            text-align: center;
+        }
+        .read{
+            width:200px;
+            height: 50px;
+        }
+        @media (max-width:1000px) and (min-width:600px){
+            .book{
+                height: 300px;
+            }
+            .read{
+                position: relative;
+            }
+        }
+
+
+        @media (max-width:600px){
+            .book{
+                height: 200px;
+            }
+            .read{
+                position: relative;
+            }
+        }
+    </style>
+    <title>Document</title>
+
+</head>
+<body>
+    <header>
+        <span id="logo"><h1>🕮BookSlide</h1></span>
+        <span id="menu">
+            <a href="page_principale.html">Accueil</a>
+            <a href="votes.html">Votes</a>
+            <a href="romans_courts.html">courts</a>
+            <a href="contact.html">Contact</a>
+        </span>
+    </header>
+    <div class="concept">
+        <p id="p1">Apres avoir lu la plupart des romans précédents, voici ceux que nous vous proposons</p>
+    </div>
+    <div class="books">
+        <div id="book1">
+            <div class="book col-3" id="pic2">
+            </div>
+            <div class="static col-7">
+                <h1 class="nom_romans">Leonides</h1>
+                <h5>by Eissa_4</h5>
+                <button class="read"><a href="https://www.wattpad.com/story/262736825?utm_source=android&utm_medium=link&utm_content=story_info&wp_page=story_details_button&wp_uname=khvvv_">lire</a></button>
+            </div>
+        </div>
+        
+        <hr>
+
+        <div id="book2">
+            <div class="book col-3" id="pic9">
+            </div>
+            <div class="static col-7">
+                <h1 class="nom_romans">عشق ليس ضمن التقاليد</h1>
+                <h5>by AseelElbash</h5>
+                <button class="read"><a href="https://www.wattpad.com/story/128725565?utm_source=android&utm_medium=link&utm_content=story_info&wp_page=media_slideshow_button&wp_uname=khvvv_">lire</a></button>
+            </div>            
+        </div>
+        
+        <hr>
+
+        <div id="book3">
+            <div class="book col-3" id="pic8">
+            </div>
+            <div class="static col-7">
+                <h1 class="nom_romans">Alpha's mate</h1>
+                <h5>by Isalb45</h5>
+                <button class="read"><a href="https://www.wattpad.com/story/205133831?utm_source=android&utm_medium=link&utm_content=story_info&wp_page=media_slideshow_button&wp_uname=khvvv_">lire</a></button>
+            </div>
+        </div>
+        
+        <hr>
+        
+        <div id="book4">
+            <div class="book col-3" id="pic5">
+            </div>
+            <div class="static col-7">
+                <h1 class="nom_romans">Obsessed & the Ballerina</h1>
+                <h5>by Amira_aj_</h5>
+                <button class="read" id="btn4"><a href="https://www.wattpad.com/story/208009090?utm_source=android&utm_medium=link&utm_content=share_reading&wp_page=library&wp_uname=khvvv_">lire</a></button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
